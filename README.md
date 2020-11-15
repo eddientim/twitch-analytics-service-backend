@@ -1,7 +1,7 @@
 # twitch-analytics-service-backend
 This project provides analytics provided by the twitch API. For more info see the twitch API reference https://dev.twitch.tv/docs/api/reference   
 
-##Tech Stack 
+## Tech Stack 
 - Spring Framework
 - Java 11
 - Mongo DB
