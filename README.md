@@ -1,7 +1,7 @@
 # twitch-analytics-service-backend
 This project provides analytics provided by the twitch API. For more info see the twitch API reference https://dev.twitch.tv/docs/api/reference   
 
-##Tech Stack 
+## Tech Stack 
 - Spring Framework
 - Java 11
 - Mongo DB
@@ -9,21 +9,21 @@ This project provides analytics provided by the twitch API. For more info see th
 - Maven
 - Junit 5
 
-##Run in docker container
+## Run in docker container
 ```bash
 # run the container
 source run-container.sh
 ```
 
-##Run tests
+## Run tests
 ```bash
 mvn test
 ```
 
-##Ports
+## Ports
 This project uses port "8080" as default
 
-###License
+### License
 MIT License
 
 Copyright (c) 2020 eddientim

@@ -1,0 +1,13 @@
+language: java
+jdk:
+  - adoptopenjdk11
+install:
+  - mvn package
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B
+branches:
+  only:
+  -feat/*
+  -main
+services: 
+  - docker
