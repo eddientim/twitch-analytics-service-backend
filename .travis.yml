@@ -1,12 +1,14 @@
 language: java
 jdk:
   - openjdk11
-#install:
-#  - mvn package
-#  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-#  - mvn test -B
-#branches:
-#  -feat/*
-#  -main
-#services:
-#  - docker
+branches:
+  only:
+  - feat/*
+  - main
+services:
+  - docker
+before_install:
+  - docker build -t twitch-analystics-service-backend .
+  - docker run -d -p 8080:8080 twitch-analystics-service-backend
+  - docker ps
+  - docker stop 
