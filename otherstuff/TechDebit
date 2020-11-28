@@ -1,0 +1,5 @@
+TODO:
+Make a list of end points created
+Fix container issue so it can build on any machine
+Sort out checkstyle config
+Sort out CI Pipeline
