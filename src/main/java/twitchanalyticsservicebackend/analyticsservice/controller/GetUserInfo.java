@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/hello")
 @RestController
-public class GetMostPopularController {
+public class GetUserInfo {
 
     @GetMapping("/id")
     public String getHello() {
