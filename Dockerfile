@@ -1,11 +1,11 @@
-FROM adoptopenjdk:11
-
-ADD target/twitch-analytics-service-backend-0.0.1-SNAPSHOT.jar /app/twitch-analytics-service-backend-0.0.1-SNAPSHOT.jar
-
-RUN mkdir - /app/java_tmp
-
-WORKDIR /app
+FROM adoptopenjdk/openjdk11:alpine
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-Duser.country=GB", "-Duser.language=en", "-XX:MaxRAMFraction=2", "-Djava.io.tmpdir=/app/java_tmp", "-jar", "twitch-analytics-service-backend-0.0.1-SNAPSHOT.jar"]
+RUN mkdir /app
+
+COPY target/*.jar /app/spring-boot-application.jar
+
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
+
+HEALTHCHECK --interval=1m --timeout=3s CMD wget -q -T 3 -s http://localhost:8080/actuator/health/ || exit 1

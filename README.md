@@ -1,5 +1,9 @@
 # twitch-analytics-service-backend
-This project provides analytics provided by the twitch API. For more info see the twitch API reference https://dev.twitch.tv/docs/api/reference   
+This project provides analytics provided by the twitch API. For more info see the twitch API reference https://dev.twitch.tv/docs/api/reference 
+
+#### Status
+
+![Travis (.org) branch](https://img.shields.io/travis/eddientim/twitch-analytics-service-backend/feat/setup-docker-and-endpoint)
 
 ## Tech Stack 
 - Spring Framework
@@ -9,7 +13,7 @@ This project provides analytics provided by the twitch API. For more info see th
 - Maven
 - Junit 5
 
-## Run in docker container
+## Run app in docker container
 ```bash
 # run the container
 source run-container.sh
