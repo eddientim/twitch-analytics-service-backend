@@ -13,7 +13,7 @@ This project provides analytics provided by the twitch API. For more info see th
 - Maven
 - Junit 5
 
-## Run app in docker container
+## Run app in docker container on local
 ```bash
 # run the container
 source run-container.sh
@@ -23,6 +23,8 @@ source run-container.sh
 ```bash
 mvn test
 ```
+## Running the app as an image
+https://hub.docker.com/repository/docker/eddientim/twitch-analytics-service-backend
 
 ## Ports
 This project uses port "8080" as default
