@@ -2,7 +2,7 @@ language: java
 jdk:
   - openjdk11
 
-# whitelist
+# safelist
 branches:
   only:
   - feat/*
@@ -18,4 +18,7 @@ jobs:
       script: mvn test
     - stage: Checkstyle Validation
       script: mvn validate
+    - stage: Docker deploy
+      script: mvn deploy -Ddocker.user=user -Ddocker.password=password
+        -Ddocker.url=docker-registry-url
 
