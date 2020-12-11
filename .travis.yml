@@ -5,3 +5,11 @@ branches:
   only:
   - feat/*
   - main
+jobs:
+  include:
+    - stage: Maven Clean
+      script: mvn clean
+    - stage: Maven Install
+      script: mvn clean
+    - stage: Unit Tests
+      script: mvn test
