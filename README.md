@@ -23,7 +23,8 @@ source run-container.sh
 ```bash
 mvn test
 ```
-## Running the app as an image
+## Run app with Docker
+Pull the latest docker image down to run the application with docker only:
 https://hub.docker.com/repository/docker/eddientim/twitch-analytics-service-backend
 
 ## Ports
