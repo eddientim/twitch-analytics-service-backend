@@ -5,6 +5,8 @@ branches:
   only:
   - feat/*
   - main
+
+# whitelist
 jobs:
   include:
     - stage: Maven Clean
@@ -13,3 +15,6 @@ jobs:
       script: mvn clean
     - stage: Unit Tests
       script: mvn test
+    - stage: Checkstyle Validation
+      script: mvn validate
+
