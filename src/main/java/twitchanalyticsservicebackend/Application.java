@@ -1,4 +1,4 @@
-package twitchanalyticsservicebackend;
+package twitch.analytics.servicebackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
