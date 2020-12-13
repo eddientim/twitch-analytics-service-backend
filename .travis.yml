@@ -22,8 +22,8 @@ jobs:
     - stage: Checkstyle Validation
       script: mvn validate
     - stage: Test Coverage Check 75%
-      script: mvn verify
-    #    - stage: Docker deploy
+      script: mvn clean verify
+#    - stage: Docker deploy
 #      script: mvn deploy -Ddocker.user=user -Ddocker.password=password
 #        -Ddocker.url=docker-registry-url
     - stage:  Build & Push Docker Image
