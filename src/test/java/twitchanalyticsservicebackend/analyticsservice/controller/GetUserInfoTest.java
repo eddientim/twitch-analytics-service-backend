@@ -3,7 +3,7 @@ package twitchanalyticsservicebackend.analyticsservice.controller;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 class GetUserInfoTest {
 
@@ -14,6 +14,6 @@ class GetUserInfoTest {
         String userInfo = new GetUserInfo().getHello();
 
         //Then
-        assertEquals(userInfo,"hello world!!");
+        assertEquals(userInfo, "hello world!!");
     }
 }

@@ -2,10 +2,13 @@ language: java
 jdk:
   - openjdk11
 
+services:
+  - docker
+
 # safelist
 branches:
   only:
-  - feat/*
+  - feat/**
   - main
 
 jobs:
@@ -18,7 +21,17 @@ jobs:
       script: mvn test
     - stage: Checkstyle Validation
       script: mvn validate
-    - stage: Docker deploy
-      script: mvn deploy -Ddocker.user=user -Ddocker.password=password
-        -Ddocker.url=docker-registry-url
+    - stage: Test Coverage Check 75%
+      script: mvn verify
+    #    - stage: Docker deploy
+#      script: mvn deploy -Ddocker.user=user -Ddocker.password=password
+#        -Ddocker.url=docker-registry-url
+    - stage:  Build & Push Docker Image
+      script:
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - export REPO=$DOCKER_USERNAME/twitch-analytics-service-backend
+        - docker build -f docker/Dockerfile -t $REPO:$TRAVIS_TAG .
+        - docker tag $REPO:$TRAVIS_TAG $REPO:latest
+        - docker push $REPO
+
 
