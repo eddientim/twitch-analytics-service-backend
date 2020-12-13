@@ -4,7 +4,7 @@ This project provides analytics provided by the twitch API. For more info see th
 #### Status
 
 [![Build Status](https://travis-ci.com/eddientim/twitch-analytics-service-backend.svg?branch=main)](https://travis-ci.com/eddientim/twitch-analytics-service-backend)
-
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/eddientim/twitch-analytics-service-backend)
 ## Tech Stack 
 - Spring Framework
 - Java 11

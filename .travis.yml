@@ -2,6 +2,9 @@ language: java
 jdk:
   - openjdk11
 
+before_install:
+  - mvn clean
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 services:
   - docker
 
@@ -13,8 +16,6 @@ branches:
 
 jobs:
   include:
-    - stage: Maven Clean
-      script: mvn clean
     - stage: Maven Install
       script: mvn clean
     - stage: Unit Tests
@@ -23,15 +24,14 @@ jobs:
       script: mvn validate
     - stage: Test Coverage Check 75%
       script: mvn clean verify
-#    - stage: Docker deploy
-#      script: mvn deploy -Ddocker.user=user -Ddocker.password=password
-#        -Ddocker.url=docker-registry-url
-    - stage:  Build & Push Docker Image
-      script:
-        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - export REPO=$DOCKER_USERNAME/twitch-analytics-service-backend
-        - docker build -f docker/Dockerfile -t $REPO:$TRAVIS_TAG .
-        - docker tag $REPO:$TRAVIS_TAG $REPO:latest
-        - docker push $REPO
+    - stage: Docker deploy
+      script: mvn deploy
+#    - stage:  Build & Push Docker Image
+#      script:
+#        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#        - export REPO=$DOCKER_USERNAME/twitch-analytics-service-backend
+#        - docker build -f docker/Dockerfile -t $REPO:$TRAVIS_TAG .
+#        - docker tag $REPO:$TRAVIS_TAG $REPO:latest
+#        - docker push $REPO
 
 
