@@ -18,7 +18,7 @@ branches:
 jobs:
   include:
     - stage: Maven Install
-      script: mvn clean
+      script: mvn install
     - stage: Unit Tests
       script: mvn test
     - stage: Checkstyle Validation
