@@ -1,7 +1,26 @@
 language: java
 jdk:
   - openjdk11
+
+services:
+  - docker
+
+# safelist
 branches:
   only:
-  - feat/*
-  - main
+    - feat/**
+    - main
+jobs:
+  include:
+    -
+    - stage: Maven Clean & Install
+      script: mvn clean install
+    - stage: Unit Tests
+      script: mvn test
+    - stage: Checkstyle Validation
+      script: mvn validate
+    - stage: Test Coverage Check 75%
+      script: mvn clean verify
+
+
+

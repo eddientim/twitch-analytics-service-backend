@@ -3,8 +3,8 @@ This project provides analytics provided by the twitch API. For more info see th
 
 #### Status
 
-![Travis (.org) branch](https://img.shields.io/travis/eddientim/twitch-analytics-service-backend/feat/setup-docker-and-endpoint)
-
+[![Build Status](https://travis-ci.com/eddientim/twitch-analytics-service-backend.svg?branch=main)](https://travis-ci.com/eddientim/twitch-analytics-service-backend)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/eddientim/twitch-analytics-service-backend)
 ## Tech Stack 
 - Spring Framework
 - Java 11
@@ -23,7 +23,8 @@ source run-container.sh
 ```bash
 mvn test
 ```
-## Running the app as an image
+## Run app with Docker
+Pull the latest docker image down to run the application with docker only:
 https://hub.docker.com/repository/docker/eddientim/twitch-analytics-service-backend
 
 ## Ports
