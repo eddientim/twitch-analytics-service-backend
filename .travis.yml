@@ -8,7 +8,6 @@ services:
 before_install:
   - mvn clean
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t twitch-analytics-backend .
 
 # safelist
 branches:
@@ -26,19 +25,5 @@ jobs:
     - stage: Test Coverage Check 75%
       script: mvn clean verify
 
-deploy:
-  provider: script
-  script: bash docker_push
-  on:
-    branch: main
-#    - stage: Docker deploy
-#      script: mvn deploy
-#    - stage:  Build & Push Docker Image
-#      script:
-#        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-#        - export REPO=$DOCKER_USERNAME/twitch-analytics-service-backend
-#        - docker build -f docker/Dockerfile -t $REPO:$TRAVIS_TAG .
-#        - docker tag $REPO:$TRAVIS_TAG $REPO:latest
-#        - docker push $REPO
 
 
