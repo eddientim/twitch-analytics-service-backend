@@ -25,7 +25,7 @@ mvn test
 ```
 ## Run app with Docker
 Pull the latest docker image down to run the application with docker only:
-https://hub.docker.com/repository/docker/eddientim/twitch-analytics-service-backend
+https://hub.docker.com/r/eddientim/twitch-analytics-service-backend
 
 ## Ports
 This project uses port "8080" as default
