@@ -13,7 +13,7 @@ This project provides analytics provided by the twitch API. For more info see th
 - Maven
 - Junit 5
 
-## Run app in docker container on local
+## Run docker container app locally
 ```bash
 # run the container
 source run-container.sh
