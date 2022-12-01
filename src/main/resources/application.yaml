@@ -1,0 +1,12 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          twitch:
+            client-id: "CLIENT_ID"
+            client-secret: "CLIENT_SECRET"
+        provider:
+          twitch:
+            token-uri: "URI_REDIRECT"
+
