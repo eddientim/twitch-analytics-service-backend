@@ -4,9 +4,9 @@ spring:
       client:
         registration:
           twitch:
-            client-id: "CLIENT_ID"
-            client-secret: "CLIENT_SECRET"
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
         provider:
           twitch:
-            token-uri: "URI_REDIRECT"
+            token-uri: ${URI_REDIRECT}
 
